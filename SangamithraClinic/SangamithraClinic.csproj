@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17BFD30A-DA12-43FA-8C8F-C81F8A167C44}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SangamithraClinic</RootNamespace>
+    <AssemblyName>SangamithraClinic</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>F:\Projects\Setup\v1.4\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1FEDA421AF0876E932E07ED8EB7AD7F51382759D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SangamithraClinic_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocX">
+      <HintPath>C:\Users\Joseph\Desktop\DocX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BAL\BALDiseaseList.cs" />
+    <Compile Include="BAL\BALDoctorPatientList.cs" />
+    <Compile Include="BAL\BALGeneralCheckup.cs" />
+    <Compile Include="BAL\BALHRPatientList.cs" />
+    <Compile Include="BAL\BALLogin.cs" />
+    <Compile Include="BAL\BALPatientRegistration.cs" />
+    <Compile Include="BAL\BALPhoneBookingDetails.cs" />
+    <Compile Include="BAL\BALReports.cs" />
+    <Compile Include="BAL\BALStaffRegistration.cs" />
+    <Compile Include="BAL\BALTestDetails.cs" />
+    <Compile Include="BAL\BALTestITems.cs" />
+    <Compile Include="Common\CommonClasses.cs" />
+    <Compile Include="Common\ErrorLog.cs" />
+    <Compile Include="Common\StaticMethods.cs" />
+    <Compile Include="Constants\ConstatntMessages.cs" />
+    <Compile Include="DAL\DiseaseDAL.cs" />
+    <Compile Include="DAL\DoctorPatientListDAL.cs" />
+    <Compile Include="DAL\GeneralCheckupDAL.cs" />
+    <Compile Include="DAL\HRPatientListDAL.cs" />
+    <Compile Include="DAL\LoginDAL.cs" />
+    <Compile Include="DAL\PatientRegistrationDAL.cs" />
+    <Compile Include="DAL\PhoneBookingDAL.cs" />
+    <Compile Include="DAL\ReportsDAL.cs" />
+    <Compile Include="DAL\StaffRegistrationDAL.cs" />
+    <Compile Include="DAL\TestDetailsDAL.cs" />
+    <Compile Include="DAL\TestItemsDAL.cs" />
+    <Compile Include="dbRepeatedPatientsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRepeatedPatientsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbSangamithraClinicDataSet.cs">
+      <DependentUpon>dbSangamithraClinicDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbSangamithraClinicDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSangamithraClinicDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbSangamithraClinicDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSangamithraClinicDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbSangamithraDiseasePatients.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSangamithraDiseasePatients.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorWelcome.Designer.cs">
+      <DependentUpon>DoctorWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="PL\Admin\DiseaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Admin\DiseaseList.Designer.cs">
+      <DependentUpon>DiseaseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Admin\DoctorPatientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Admin\DoctorPatientList.Designer.cs">
+      <DependentUpon>DoctorPatientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Admin\DownLoadReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Admin\DownLoadReports.Designer.cs">
+      <DependentUpon>DownLoadReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Admin\StaffRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Admin\StaffRegistration.Designer.cs">
+      <DependentUpon>StaffRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Admin\TestDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Admin\TestDetails.Designer.cs">
+      <DependentUpon>TestDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Admin\TestList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Admin\TestList.Designer.cs">
+      <DependentUpon>TestList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Reports\DiseasesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Reports\DiseasesReport.Designer.cs">
+      <DependentUpon>DiseasesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Reports\MainWindowReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Reports\MainWindowReports.Designer.cs">
+      <DependentUpon>MainWindowReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Reports\RPReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Reports\RPReport.Designer.cs">
+      <DependentUpon>RPReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Reports\TPReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Reports\TPReport.Designer.cs">
+      <DependentUpon>TPReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Staff\GeneralCheckup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Staff\GeneralCheckup.Designer.cs">
+      <DependentUpon>GeneralCheckup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Staff\PatientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Staff\PatientList.Designer.cs">
+      <DependentUpon>PatientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Staff\PatientRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Staff\PatientRegistration.Designer.cs">
+      <DependentUpon>PatientRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Staff\PhoneBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Staff\PhoneBooking.Designer.cs">
+      <DependentUpon>PhoneBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintPreview.Designer.cs">
+      <DependentUpon>PrintPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepeatedPatientsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepeatedPatientsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StaffWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffWelcome.Designer.cs">
+      <DependentUpon>StaffWelcome.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DoctorWelcome.resx">
+      <DependentUpon>DoctorWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Admin\DiseaseList.resx">
+      <DependentUpon>DiseaseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Admin\DoctorPatientList.resx">
+      <DependentUpon>DoctorPatientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Admin\DownLoadReports.resx">
+      <DependentUpon>DownLoadReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Admin\StaffRegistration.resx">
+      <DependentUpon>StaffRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Admin\TestDetails.resx">
+      <DependentUpon>TestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Admin\TestList.resx">
+      <DependentUpon>TestList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Rdlc\DiseasePatients.rdlc" />
+    <EmbeddedResource Include="PL\Rdlc\RepeatedPatients.rdlc" />
+    <EmbeddedResource Include="PL\Rdlc\TotalPatients.rdlc" />
+    <EmbeddedResource Include="PL\Reports\DiseasesReport.resx">
+      <DependentUpon>DiseasesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Reports\MainWindowReports.resx">
+      <DependentUpon>MainWindowReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Reports\RPReport.resx">
+      <DependentUpon>RPReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Reports\TPReport.resx">
+      <DependentUpon>TPReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Staff\GeneralCheckup.resx">
+      <DependentUpon>GeneralCheckup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Staff\PatientList.resx">
+      <DependentUpon>PatientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Staff\PatientRegistration.resx">
+      <DependentUpon>PatientRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Staff\PhoneBooking.resx">
+      <DependentUpon>PhoneBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintPreview.resx">
+      <DependentUpon>PrintPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="StaffWelcome.resx">
+      <DependentUpon>StaffWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="dbRepeatedPatientsDataSet.xsc">
+      <DependentUpon>dbRepeatedPatientsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbRepeatedPatientsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbRepeatedPatientsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbRepeatedPatientsDataSet.xss">
+      <DependentUpon>dbRepeatedPatientsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbSangamithraClinicDataSet.xsc">
+      <DependentUpon>dbSangamithraClinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbSangamithraClinicDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbSangamithraClinicDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbSangamithraClinicDataSet.xss">
+      <DependentUpon>dbSangamithraClinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbSangamithraClinicDataSet1.xsc">
+      <DependentUpon>dbSangamithraClinicDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbSangamithraClinicDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbSangamithraClinicDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbSangamithraClinicDataSet1.xss">
+      <DependentUpon>dbSangamithraClinicDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbSangamithraDiseasePatients.xsc">
+      <DependentUpon>dbSangamithraDiseasePatients.xsd</DependentUpon>
+    </None>
+    <None Include="dbSangamithraDiseasePatients.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbSangamithraDiseasePatients.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbSangamithraDiseasePatients.xss">
+      <DependentUpon>dbSangamithraDiseasePatients.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\history.svg" />
+    <None Include="Resources\PR_Original.psd" />
+    <None Include="SangamithraClinic_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RepeatedPatientsDataSet.xsc">
+      <DependentUpon>RepeatedPatientsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RepeatedPatientsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepeatedPatientsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepeatedPatientsDataSet.xss">
+      <DependentUpon>RepeatedPatientsDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="ErrorLog\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\DocX.dll" />
+    <None Include="Resources\UserName_Change.jpg" />
+    <None Include="Resources\UserName.jpg" />
+    <None Include="Resources\Upload2.jpg" />
+    <None Include="Resources\Upload.jpg" />
+    <None Include="Resources\track-record.png" />
+    <None Include="Resources\SetupIcon.ico.png" />
+    <None Include="Resources\search-button-png-hi.png" />
+    <None Include="Resources\Search.jpg" />
+    <None Include="Resources\SaveMe.jpg" />
+    <None Include="Resources\RightArrow.png" />
+    <None Include="Resources\Reports2.jpg" />
+    <None Include="Resources\reports1.jpg" />
+    <None Include="Resources\Reports_Original.jpg" />
+    <None Include="Resources\PR8.jpg" />
+    <None Include="Resources\PR5.jpg" />
+    <None Include="Resources\PR4.jpg" />
+    <None Include="Resources\PR3.jpg" />
+    <None Include="Resources\PR2.jpg" />
+    <None Include="Resources\PR1.jpg" />
+    <None Include="Resources\PR_Original.jpg" />
+    <None Include="Resources\pic-track-record.jpg" />
+    <None Include="Resources\PatientTrackRecord_Original1.jpg" />
+    <None Include="Resources\PatientTrackRecord_Original.jpg" />
+    <None Include="Resources\PatientList2_Original.jpg" />
+    <None Include="Resources\PatientList_Original1.jpg" />
+    <None Include="Resources\PatientList_Original.jpg" />
+    <None Include="Resources\Password_Change.png" />
+    <None Include="Resources\Password.png" />
+    <None Include="Resources\ORGINAL.jpg" />
+    <None Include="Resources\new-patient-registration-small.png" />
+    <None Include="Resources\NewPatientRegistration.png" />
+    <None Include="Resources\Logo_Change.jpg" />
+    <None Include="Resources\Logo.jpg" />
+    <None Include="Resources\HA_Proven_Track_Record.png" />
+    <None Include="Resources\FollowUp.jpg" />
+    <None Include="Resources\evaluate-potential-track-record.jpg" />
+    <None Include="Resources\DownLoad.jpg" />
+    <None Include="Resources\Cancel.jpg" />
+    <None Include="Resources\button tut.jpg" />
+    <None Include="Resources\BackgroundImage1.png" />
+    <None Include="Resources\BackButton.jpg" />
+    <None Include="Resources\Back.jpg" />
+    <None Include="Resources\arrow-right-01-128.png" />
+    <None Include="Resources\arrow-right-.bmp" />
+    <None Include="Resources\007989-glossy-black-icon-arrows-arrow11-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
